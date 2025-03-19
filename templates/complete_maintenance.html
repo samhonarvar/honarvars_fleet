@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Maintenance Task - Honarvars Fleet Maintenance Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4">Complete Maintenance Task</h1>
+        <a href="/maintenance_tasks" class="btn btn-secondary mb-4">Back to Tasks</a>
+        
+        <form method="post" action="/complete_maintenance/{{ car_name }}/{{ task_index }}">
+            <div class="mb-3">
+                <label for="note" class="form-label">Completion Note</label>
+                <textarea id="note" name="note" rows="4" class="form-control"
+                          placeholder="Describe the work done..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Mark as Completed</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

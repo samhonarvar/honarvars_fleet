@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Maintenance History - Honarvars Fleet Maintenance Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4">Maintenance History</h1>
+        <a href="/" class="btn btn-secondary mb-4">Back to Home</a>
+
+        {% for car_name, records in history.items() %}
+            <h4>{{ car_name }}</h4>
+            <ul class="list-group mb-4">
+                {% for record in records %}
+                    <li class="list-group-item">
+                        <strong>{{ record.task }}</strong> 
+                        (Completed on: {{ record.completion_date }})
+                        {% if record.note %}
+                            <br><em>Note:</em> {{ record.note }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
